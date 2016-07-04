@@ -1,0 +1,16 @@
+{
+  "name": "css-selector-tests",
+  "version": "0.1.0",
+  "description": "parse CSS to create unit tests",
+  "scripts": {
+    "test": "npm run test:phantom",
+    "test:phantom": "node tests/browser/run-phantom.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cssom": "^0.3.1",
+    "intern": "^3.2.3",
+    "phantomjs2": "^2.2.0"
+  }
+}

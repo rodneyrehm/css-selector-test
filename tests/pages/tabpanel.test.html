@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TabPanel</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./tabpanel.css">
+  <link rel="stylesheet" href="./tabpanel.test.css">
+</head>
+<body>
+
+  <main role="main">
+    <div class="tab-interface">
+      <ul role="tablist">
+        <li role="presentation"><a href="#panel1" id="tab1" role="tab" aria-selected="true">First Tab</a></li>
+        <li role="presentation"><a href="#panel2" id="tab2" role="tab" tabindex="-1">Second Tab</a></li>
+        <li role="presentation"><a href="#panel3" id="tab3" role="tab" tabindex="-1">Third Tab</a></li>
+        <li role="presentation"><a href="#panel4" id="tab4" role="none" tabindex="-1">Error Tab</a></li>
+      </ul>
+      <div role="tabpanel" id="panel1" aria-labelledby="tab1">
+        <h3>Panel 1</h3>
+        <p>Some content for Panel 1</p>
+      </div>
+      <div role="tabpanel" id="panel2" aria-labelledby="tab2">
+        <h3>Panel 2</h3>
+        <p>Some content for Panel 2</p>
+      </div>
+      <div role="tabpanel" id="panel3" aria-labelledby="tab3">
+        <h3>Panel 3</h3>
+        <p>Some content for Panel 3</p>
+      </div>
+    </div>
+  </main>
+
+<!--
+  <script src="./jquery.js"></script>
+  <script src="./tabpanel.js"></script>
+-->
+</body>
+</html>

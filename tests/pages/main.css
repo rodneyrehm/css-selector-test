@@ -1,0 +1,783 @@
+/** Variables
+* -------------------------------------------------------------- 
+
+#222 = font color
+#fefefe = light font color
+#1928CF = link color
+#8187CF = link color light
+#1A248F = link color dark
+
+*/
+
+/**
+* Reset
+----------------------------------------------------------------------
+*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+nav ul { list-style: none }
+
+blockquote, q { quotes: none }
+
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+
+input, select { vertical-align: middle }
+
+div, input, textarea, select, header, footer {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+/**
+* Basic
+----------------------------------------------------------------------
+*/
+
+html {
+	font-size: 150%;
+}
+
+body { 
+	line-height: 1;
+	font-weight: 400;
+	font-family: 'Noto Serif', sans-serif;
+	color: #222;
+	padding: 3em 0 0;
+}
+
+html:focus {
+	ouline: none;
+}
+
+/**
+* Generic links
+----------------------------------------------------------------------
+*/
+
+a, a:visited { 
+	color: #1928CF;
+	text-decoration: none;
+}
+
+a:hover { 
+	color: #8187CF;
+}
+
+a:focus { outline: thin dotted; color: #8187CF;  }
+
+a:active { 
+	outline: none;
+}
+
+p a { border-bottom: 1px solid }
+p a:hover, p a:focus { border-bottom: 2px solid; outline: 0; }
+p a:active { border-bottom: 3px solid }
+
+/**
+* Flow
+----------------------------------------------------------------------
+*/
+
+body * + * {
+	margin-top: 1.5rem;
+}
+
+li, p + p, dt, dd {
+	margin-top: 0;
+}
+
+blockquote, figure {
+	padding: 1.5rem;
+}
+
+blockquote p {
+	font-size: 1.25em;
+	font-style: italic;
+	margin-top: 1.5em;
+}
+
+caption { 
+	text-align: center;
+	padding: 0.75em;
+	padding-bottom: 0;
+}
+
+blockquote footer:before { 
+	content: '\2014';
+	padding: 0 9px 0 0;
+}
+
+blockquote p:before, q:before { content: '\201C' }
+
+blockquote p:after, q:after { content: '\201D' }
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+* Paragraphs and lists
+----------------------------------------------------------------------
+*/
+
+p, li, dt, dd {
+	line-height: 1.5;
+}
+
+p { 
+	text-align: justify;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+p:only-of-type, header p {
+	text-align: left;
+	-moz-hyphens: none;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+p * { margin-top: 0 }
+
+p + p { text-indent: 1.5em }
+
+[role="main"] > div > p:first-child:first-letter {
+    float: left;
+    font-size: 3.66em;
+    line-height: 1;
+    vertical-align: super;
+}
+
+/* for introductory paragraphs belonging to major sections */
+header p { font-size: 1.25em }
+
+li { list-style: disc inside }
+
+ol li { list-style-type: decimal }
+
+dl {
+	font-size: 0;
+}
+
+dt, dd {
+	font-size: 1rem;
+	display: inline-block;
+	vertical-align: top;
+	width: 60%;
+	padding-top: 18px;
+}
+
+dt {
+	width: 30%;
+	text-align: right;
+	font-style: italic;
+	padding-right: 1.5em;
+}
+
+/**
+* <nav> sections
+----------------------------------------------------------------------
+*/
+
+[aria-label="menu of examples"] {
+	margin-top: 1.5em;
+}
+
+[aria-label="menu of examples"] a:focus {
+	color: #1A248F;
+}
+
+ol li:last-child {
+	list-style: none;
+}
+
+/**
+* Headings
+----------------------------------------------------------------------
+*/
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+	line-height: 1;
+}
+
+* + h1, * + h2, * + h3 { margin-top: 2.25rem }
+* + h4 { margin-top: 1.5rem }
+
+h4 { font-size: 1em }
+h3 { font-size: 1.25em }
+h2 { font-size: 1.66em }
+h1 { font-size: 2.5em }
+
+h1 {
+	text-transform: capitalize;
+}
+
+header > div {
+	border-bottom: 0.25em solid;
+	padding-bottom: 1.5rem;
+}
+
+header + * {
+	margin-top: 3rem;
+}
+
+header * + * {
+	margin-top: 0.25em;
+}
+
+[role="main"], [role="banner"] {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+
+/**
+* Phrasing
+----------------------------------------------------------------------
+*/
+
+p * { line-height: 1; }
+
+strong, abbr, b { font-weight:700 }
+em, cite, q { font-style: italic }
+abbr { letter-spacing: 0.125em }
+del { text-decoration: line-through }
+abbr[title], dfn[title] { cursor: help }
+
+abbr:after {
+	content: '(?)';
+	font-size: 0.5em;
+	vertical-align: top;
+	vertical-align: super;
+	line-height: 0;
+	font-family: serif;
+	letter-spacing: 0;
+}
+
+small {
+	font-size: 0.9em;
+	color: #444;
+}
+
+code, samp {
+	background: #ddd;
+	padding: 0.25em;
+	font-family: 'Lucida Console', monospace;
+	font-size: 0.8em;
+	letter-spacing: 1px;
+	-moz-hyphens: none;
+	-webkit-hyphens: none;
+	hyphens: none;
+	font-style: normal;
+	-webkit-transition: outline 0.5s all;
+	-moz-transition: outline 0.5s all;
+	-ms-transition: outline 0.5s all;
+	-o-transition: outline 0.5s all;
+	transition: outline 0.5s all;
+}
+
+sup, sub {
+	line-height: 0;
+	font-size: 0.8em;
+}
+
+sup {
+	vertical-align: super;
+	font-style: italic;
+}
+
+sub {
+	vertical-align: sub;
+	position: relative;
+	top: -0.125em;
+	font-size: 0.8em;
+}
+
+kbd {
+	font-family: 'Lucida Console', monospace;
+	border: 2px solid;
+	padding: 0 0.125em;
+	white-space: nowrap;
+}
+
+/**
+* Images
+----------------------------------------------------------------------
+*/
+
+img {
+	max-width: 100%; 
+	height: auto;
+	border: 0;
+}
+
+figure {
+	padding: 0.75em 0;
+	text-align: center;
+}
+
+figure img {
+	max-width: 75%;
+}
+
+figcaption {
+	font-style: italic;
+	margin-top: 0.75rem;
+}
+
+/**
+* Code blocks
+----------------------------------------------------------------------
+*/
+
+pre {
+	background: #222;
+	color: #fefefe;
+	padding: 1.5rem;
+	font-family: 'Lucida Console', monospace;
+	white-space: pre;
+	line-height: 1.5;
+	font-size: 0.85em;
+	overflow-y: auto;
+}
+
+.aria {
+	background: #3CBF3B; 
+	color: #222;
+	border-radius: 50px;
+	padding: 0 5px;
+}
+
+code.aria {
+	font-weight: 700;
+	padding: 0.125em 0.25em;
+}
+
+/**
+* Forms
+----------------------------------------------------------------------
+*/
+
+/*
+
+Uses the format
+
+<form>
+	<fieldset>
+		<legend></legend>
+		<div>
+			<label></label>
+			--form input / textarea etc--
+		</div>
+		<div>
+			... " ...
+		</div>
+	</fieldset>
+</form>
+
+*/
+
+fieldset {
+	padding: 1.5em;
+	border: 2px solid #222;
+	background: #E0E1EF;
+}
+
+legend {
+	font-size: 1.25rem;
+	font-style: italic;
+	padding: 0 0.5em;
+	background: #222;
+	padding: 0.25em;
+	color: #fff;
+}
+
+legend + div {
+	margin-top: 0;
+}
+
+form > div > * {
+	display: block;
+}
+
+label {
+	line-height: 1;
+	font-weight: 700;
+	display: block;
+}
+
+input, textarea, select {
+	font-size: inherit;
+	font-family: inherit;
+	margin-top: 0.33em;
+	line-height: 1.5;
+	width: 100%;
+	padding: 0.25em;
+	border: 2px solid #222;
+}
+
+output {
+	background: #fff;
+	padding: 0.5em;
+	vertical-align: middle;
+	display: block;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+form p + p {
+	margin-top: 0.75em;
+	text-indent: 0;
+}
+
+input:focus, textarea:focus, select:focus {
+	outline: 2px solid #222;
+}
+
+option {
+	margin-top: 0;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	width: auto;
+	padding: 0;
+	border: 0;
+	margin-top: 0;
+}
+
+label input {
+	display: inline-block; 
+	margin-right: 0.5em;
+	vertical-align: baseline;
+}
+
+[role="main"] {
+  counter-reset: section;
+}
+
+section + section {
+	border-top: 2px dashed #222;
+	padding-top: 3em;
+}
+
+section h2:before {
+	counter-increment: section;
+	content: counter(section);
+	background: #222;
+	color: #fff;
+	line-height: 1;
+	padding:0.125em 0.33em;
+	border-radius: 50px;
+	display: inline-block;
+	margin-right: 0.25em;
+}
+
+[role="contentinfo"] {
+	background: #222;
+	padding: 1.5em;
+	color: #fff;
+}
+
+[role="contentinfo"] a {
+	color: #fff;
+}
+
+[role="contentinfo"] a:hover, [role="contentinfo"] a:focus {
+	color: #8187CF;
+}
+
+/**
+* Buttons
+----------------------------------------------------------------------
+*/
+
+button, [role="button"], [role="button"]:visited, [role="button"]:hover, 
+[type="submit"], [type="reset"] {
+	background: #1928CF;
+	border: 0;
+	color: #fefefe;
+	display: inline-block;
+	font-size: 1.25em; 
+	padding: 0.125em 0.5em;
+	font-weight: 700;
+	cursor: pointer;
+	letter-spacing: 2px;
+	width: auto;
+	font-family: inherit;
+	vertical-align: middle;
+}
+
+button:focus, [role="button"]:focus, 
+[type="submit"]:focus, [type="reset"]:focus {
+	outline: 4px solid #222; 
+	background: #1A248F;
+}
+
+button:active, [role="button"]:active, 
+[type="submit"]:active, [type="reset"]:active {
+	background: #1A248F;
+	border: 0; 
+}
+
+ul[role="toolbar"] li {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+}
+
+ul[role="toolbar"] button, ul[role="toolbar"] a {
+	margin: 0.25em 0;
+}
+
+button[disabled], input[disabled] {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+  cursor: default;
+}
+
+button[disabled]:hover, button[disabled]:focus, 
+input[disabled]:hover, input[disabled]:focus {
+	background: #cc0000;
+}
+
+/**
+* Grid-like helper styles
+* For making quasi-columns / adjacent boxes. Example HTML to follow
+----------------------------------------------------------------------
+*/
+
+/* to remove inline-block white space separating children */
+div[class^="group"] { 
+	font-size: 0;
+	text-align: left;
+	display: block; 
+	width: auto !important;
+} 
+
+div[class^="group"] > * {
+	font-size: 1rem; /* override reset in above rule */
+	display: inline-block; /* floats are for losers */
+	vertical-align: top;
+	margin-top: 0;
+}
+
+/* adjacent boxes need gutters. We create this using margin on their direct children  */
+div[class^="group"] > * > * { 
+	margin: 0 0.75em 0 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	width: auto !important;
+	overflow: hidden;
+}
+div[class^="group"] > * + * > * { margin: 0 0.75em 0 } 
+div[class^="group"] > *:last-child > * { margin-right: 0 }
+
+/* One from each of the following sets of three to be placed on the containing div element */ 
+
+/* Set 1: Horizontal alignment of boxes */
+div.group-left { text-align: left }
+div.group-center { text-align: center }
+div.group-right { text-align: right }
+
+/* Set 2: Vertical alignment of boxes */
+div.group-top > * { vertical-align: top }
+div.group-middle > * { vertical-align: middle }
+div.group-bottom > * { vertical-align: baseline }
+
+/** 
+* EXAMPLE
+* Inline styles are used to define width 
+*(saves on spawning classes like ".three-fifths" etc)
+* Boxes are centered on vertical axis 
+********************************************
+
+<div class="group-center group-middle">
+	<div style="width:50%">
+		<div><!-- box content --></div>
+	</div>
+	<div style="width:30%">
+		<div><!-- box content --></div>
+	</div>
+	<div style="width:20%">
+		<div><!-- box content --></div>
+	</div>
+</div>
+
+*/
+
+/**
+* Utilities
+----------------------------------------------------------------------
+*/
+
+.a11y-hide {
+	display: inline-block !important;
+	height: 0 !important;
+	width: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	position: absolute !important;
+}
+
+.a11y-hide + * {
+	margin-top: 0 !important;
+}
+
+.pen {
+	padding: 1.5em;
+	background: #E0E1EF;
+}
+
+/**
+* Collapsable definition items
+* Uses the 5k collapse plugin (http://webcloud.se/jQuery-Collapse/)
+----------------------------------------------------------------------
+*/
+
+.box dt, .box dd {
+	display: block;
+	text-align: left;
+	width: auto;
+	padding: 0;
+}
+
+.box dt  a {
+	padding: 12px 12px;
+	background: #1928CF;
+	display: block;
+	color: #fefefe;
+	font-style: normal;
+}
+
+.box dt {
+	margin-bottom: 6px;
+}
+
+.box dt a:before {
+	content:'\25B6';
+	padding-right: 0.5em;
+}
+
+.box dt.open a:before {
+	content:'\25BC';
+}
+
+.box dt.open {
+	margin-bottom: 0;
+}
+
+.box dd {
+	padding: 12px 0;
+}
+
+.box dt  a:hover, .box a:active, .box a:focus {
+	background: #1A248F;
+}
+
+/**
+* Accessible tabs
+----------------------------------------------------------------------
+*/
+
+.tabs > div .tabs-panel { 
+	display: none; 
+	background: #fefefe;
+	padding: 1.5em 1em;
+}
+
+.tabs-panel {
+	margin-top: 0;
+}
+
+.tabs > div .tabs-panel-selected { display: block; }
+
+.tabs-nav a {
+	margin-bottom: 0;
+}
+
+li.tabs-selected a {
+	background: #fefefe;
+	color: #222;
+}
+
+.tabs-body {
+	margin-top: 0;
+}
+
+/**
+* Layout
+----------------------------------------------------------------------
+*/
+
+header[role="banner"] > div, footer[role="contentinfo"] > div, body > div > div {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+section + section {
+	margin-top: 3em;
+}
+
+/*
+div[role="main"] {
+	float: left;
+	width: 100%;
+}
+
+div[role="main"] > div {
+	margin-right: 227px;
+}
+
+aside[role="complementary"] {
+	float: left;
+	width: 200px;
+	margin-left: -200px;
+	margin-top: 0;
+}
+
+footer {
+	clear: both;
+}
+*/
+
+aside {
+	padding-top: 3em;
+	margin-top: 3em;
+	border-top: 4px solid;
+}
+
+@media (max-width: 800px) {
+	
+	html {
+		font-size: 100%;
+	}
+	
+}

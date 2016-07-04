@@ -1,0 +1,42 @@
+
+.tab-interface ul:not([role="tablist"]) {
+  ERROR: "The tab interface <ul> must have the tablist WAI-ARIA role to be recognized in assistive technologies.";
+}
+
+[role="tablist"] a:not([role="tab"]) {
+  ERROR: "<a> elements within the tablist need to each have the WAI-ARIA tab role to be counted as tabs in assistive technologies.";
+}
+
+[role="tablist"] li:not([role="presentation"]) {
+  ERROR: "Remove the <li> semantics with the WAI-ARIA presentation role. Where the tab interface is instated, these semantics are irrelevant.";
+}
+
+[role="tablist"] a[aria-selected][tabindex="-1"] {
+  ERROR: "Remove the -1 tabindex value on the aria-selected tab to make it focusable by the user. They should be able to move to this tab only.";
+}
+
+[role="tablist"] a:not([aria-selected]):not([tabindex="-1"]) {
+  ERROR: "All unselected tabs should have the -1 tabindex value and only be focusable using the left and right arrow keys.";
+}
+
+[role="tabpanel"]:not([aria-labelledby^="tab"]) {
+  ERROR: "Each tabpanel should have an aria-labelledby attribute starting with "tab" followed by the corresponding tab's number. This is the convention of tab systems in our interface.";
+}
+
+[role="tablist"] ~ div:not([role="tabpanel"]) {
+  ERROR: "Each tabpanel needs to have the explicit tabpanel WAI-ARIA role to be correctly associated with the tablist that controls it.";
+}
+
+[role="tablist"] + div:not([role="tabpanel"]) {
+  ERROR: "The first element after the tablist should be a tab panel with the tabpanel WAI-ARIA role. Screen reader users must be able to move directly into the open tab panel from the selected tab.";
+}
+
+.tab-interface ul:not([role="tablist"]),
+[role="tablist"] a:not([role="tab"]),
+[role="tablist"] li:not([role="presentation"]),
+[role="tablist"] a[aria-selected][tabindex="-1"],
+[role="tablist"] a:not([aria-selected]):not([tabindex="-1"]),
+[role="tablist"] ~ div:not([role="tabpanel"]),
+[role="tablist"] + div:not([role="tabpanel"]) {
+  outline: 0.5em solid red;
+}
